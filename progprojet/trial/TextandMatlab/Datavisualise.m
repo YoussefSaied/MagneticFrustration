@@ -961,6 +961,20 @@ ylabel("Energy [J] $10^{-5}$")
 xlabel("FWtotal angle [rad]")
 
 
+%% Total angle of FW and WW vs average vertex energy:
+
+figure
+
+AverageVertexEnergy= mean(vertices(:,:,1),2);
+scatter(WWtotalangle2+FWtotalangle2, AverageVertexEnergy)
+hold on
+
+title("Total WW + FW angle vs Average Vertex Energy")
+xlabel("Total WW + FW angle [rad]")
+ylabel("Count")
+colormap jet
+grid on
+
 %% Magnet by maintype
 
 figure
@@ -2090,7 +2104,7 @@ C = flip(FFDodec);
 figure
 hold on
 for j =1: 4
-scatter(FWtotalangle,FFEnergy(:,j),15);
+scatter(WWtotalangle+FWtotalangle,FFEnergy(:,j),15);
 end
 colormap jet
 grid on

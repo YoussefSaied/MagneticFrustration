@@ -2,3 +2,9 @@
 progprojet/build-simulation1-Desktop_Qt_5_12_6_GCC_64bit-Debug/
 
 *.user
+
+progprojet/trial/.fuse_hidden000003f200000002
+
+progprojet/trial/.qmake.stash
+
+progprojet/trial/.vscode/
