@@ -55,7 +55,14 @@ public slots:
         double dt(glWidget->dt);
         if ((glWidget->system_tab[0])->time > 0.00
           and std::fmod((glWidget->system_tab[0])->time, 100.0 * dt) <= 10.0 * dt)
-        {
+        {   if (DoOnce == 0){
+                double initialMagnetLength =(glWidget->system_tab[0])->MagnetLength();
+                MagnetLength ->setValue(initialMagnetLength);
+
+                double initialMagnetCharge =(glWidget->system_tab[0])->MagnetCharge();
+                MagnetStrength ->setValue(initialMagnetCharge);
+                DoOnce = 1;
+            }
             HamiltonianTime->append((glWidget->system_tab[0])->time, (glWidget->system_tab[0])->Energy());
             KineticTime->append((glWidget->system_tab[0])->time, (glWidget->system_tab[0])->KineticEnergy);
             PotentialTime->append((glWidget->system_tab[0])->time, (glWidget->system_tab[0])->PotentialEnergy);
@@ -158,6 +165,7 @@ public:
     QDoubleSpinBox * MagnetLength;
     QPushButton * MagnetsLoad; // Button to load Magnets from a text file
     QPushButton * MagnetsSave; // Button to save Magnets after simulation in a text file
+    bool DoOnce;
 
     // output or load angles
 

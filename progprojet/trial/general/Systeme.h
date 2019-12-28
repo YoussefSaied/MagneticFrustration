@@ -58,7 +58,19 @@ public:
 
     virtual void dessine() const override { support->dessine(*this); }
 
+    virtual double MagnetLength(){
+        if (tab_ptr_Magnets.size()> 0){
+            return tab_ptr_Magnets[0]->length*100;
+        }
+        else return 0;
+    } //returns the magnets' length if the magnets vector is nonempty
 
+    virtual double MagnetCharge(){
+        if (tab_ptr_Magnets.size()> 0){
+            return tab_ptr_Magnets[0]->charge;
+        }
+        else return 0;
+    } //returns the magnets' charge if the magnets vector is nonempty
 
     // evolve: all magnet magnet interactions
     virtual void evolue(double dt = 0.01);

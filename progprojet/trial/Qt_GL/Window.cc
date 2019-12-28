@@ -15,6 +15,7 @@ Window::Window()
     connect(glWidget, SIGNAL(YBChanged(double)), this, SLOT(updatelabelO()));
     connect(glWidget, SIGNAL(ZBChanged(double)), this, SLOT(updatelabelO()));
     connect(glWidget, SIGNAL(evolved(double)), this, SLOT(updatelabelO()));
+    DoOnce = 0;
 
 
     // chart1
@@ -69,6 +70,10 @@ Window::Window()
     labelMagnetLength->setText("Magnet Length:");
     QLabel * labelMagnetStrength = new QLabel(this);
     labelMagnetStrength->setText("Magnet Strength:");
+    QLabel * labelMagnetLengthUnit = new QLabel(this);
+    labelMagnetLengthUnit->setText("(x10^-2) [m]");
+    QLabel * labelMagnetStrengthUnit = new QLabel(this);
+    labelMagnetStrengthUnit->setText("[C]");
 
 
     xSlider          = createSlider();
@@ -79,7 +84,12 @@ Window::Window()
     zselector        = createdoubleSpin(0.1);
     magnetselector   = createSpin();
     MagnetLength     = createdoubleSpin(0.1);
+
+
     MagnetStrength   = createdoubleSpin(0.1);
+
+
+
     labels = new QLabel(this);
     labels->setText("Change Magnet");
     angleselector = createdoubleSpin();
@@ -140,11 +150,12 @@ Window::Window()
     mainLayout->addWidget(labelMagnetLength, 2, 5);
 
     mainLayout->addWidget(MagnetLength, 2, 6);
+    mainLayout->addWidget(labelMagnetLengthUnit, 2, 7);
 
     mainLayout->addWidget(labelMagnetStrength, 3, 5);
 
     mainLayout->addWidget(MagnetStrength, 3, 6);
-
+    mainLayout->addWidget(labelMagnetStrengthUnit, 3, 7);
 
     mainLayout->addWidget(labelmagnet, 4, 5);
     mainLayout->addWidget(magnetselector, 4, 6);
