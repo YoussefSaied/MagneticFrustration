@@ -14,6 +14,8 @@ Although the simulation would work on any OS, it's highly recommended to use a L
  - A C++ compiler (Included in Ubuntu)
  - OpenGL (Normally, Included in Ubuntu)
  - Armadillo C++ library for matrix calculations in C++
+ 
+ Commands to install required libraries for Ubuntu:
 
 ```sh
 $ sudo apt-get install liblapack-dev
