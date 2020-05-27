@@ -29,7 +29,8 @@ public:
 
     virtual ~Magnet(){ }
 
-    // Non-pure Virtual Methods
+    // Non-pure Virtual Methods:
+
     double inertia() const
     { return mass * length * length / 12; }
 
@@ -43,8 +44,11 @@ public:
     virtual double chargeS() const
     { return charge * -1; }
 
+
+    //The height as a function of the radius if radius is provided (Paula's)
     double get_axerheight() const { return radius * 6; }
 
+    //The radius as a function of the height if height is provided (Paula's)
     double get_axerradius() const { return length / 20; }
 
     void set_support(SupportADessin * s){ support = s; }

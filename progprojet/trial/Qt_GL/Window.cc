@@ -129,7 +129,7 @@ Window::Window()
     mainLayout->addWidget(glWidget, 0, 0, 2, 1);
     mainLayout->addWidget(labelO, 2, 0, -1, 1);
 
-    mainLayout->addWidget(chartview1, 0, 1, 1, 2);
+    //mainLayout->addWidget(chartview1, 0, 1, 1, 2);
     mainLayout->addWidget(chartview2, 1, 1, 1, 2);
     mainLayout->setColumnMinimumWidth(1, 250);
 

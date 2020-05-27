@@ -57,10 +57,13 @@ public:
     Vecteur3D moment() const override
     { return orientationV() * chargeN() * length; }
 
-    // charge attibutes
+    // charge attibutes:
+
+    //North charge position
     Vecteur3D positionN() const override
     { return position + orientationV() * length / 2; }
 
+    //South charge position
     Vecteur3D positionS() const override
     { return position - orientationV() * length / 2; }
 
@@ -70,11 +73,13 @@ public:
     double chargeS() const override
     { return charge * -1; }
 
-    // axis
+    //The height as a function of the radius if radius is provided (Paula's)
     double get_axerheight() const { return radius * 6; }
 
+    //The radius as a function of the height if height is provided (Paula's)
     double get_axerradius() const { return length / 20; }
 
+    // The class that would 'draw' the magnet (textual or graphical)
     void set_support(SupportADessin * s){ support = s; }
 
     virtual void setangle(double a) override {angle =a;}

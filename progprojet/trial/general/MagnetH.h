@@ -97,10 +97,13 @@ public:
     virtual Vecteur3D moment() const override
     { return orientation * chargeN() * length; }
 
-    // charge attibutes
+    // charge attibutes:
+
+    // Position of north charge
     virtual Vecteur3D positionN() const override
     { return position + orientation * length / 2; }
 
+    //Position of south charge
     virtual Vecteur3D positionS() const override
     { return position - orientation * length / 2; }
 
